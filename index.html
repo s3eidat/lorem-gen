@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self' data: blob:; connect-src 'self' data: blob:; worker-src 'self' blob:; manifest-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Lorem Gen — Free Lorem Ipsum &amp; Arabic Placeholder Text Generator | S3eidat Tools</title>
+<meta name="description" content="Generate placeholder text: classic Lorem ipsum, English-like or Arabic. Paragraphs, sentences or words, optional HTML &lt;p&gt; tags. Free, private, runs in your browser.">
+<meta property="og:title" content="Lorem Gen — placeholder text in English and Arabic">
+<meta property="og:description" content="Lorem ipsum, English-like and Arabic dummy text. Runs 100% in your browser.">
+<meta property="og:image" content="screenshot.png">
+<link rel="icon" href="kit/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="kit/kit.css">
+<link rel="stylesheet" href="app.css">
+<script src="kit/kit.js"></script>
+</head>
+<body data-tool="lorem-gen">
+<main class="s3-main">
+  <section class="s3-hero">
+    <h1>Lorem Gen</h1>
+    <p>Placeholder text for designs and mock-ups: classic Lorem ipsum, readable English-like filler, or Arabic. Pick how much, copy, done.</p>
+  </section>
+
+  <div class="lg-grid">
+    <section class="card stack">
+      <h2>Settings</h2>
+      <div class="stack">
+        <span class="faint">Style</span>
+        <div class="seg" id="style" role="group" aria-label="Style">
+          <button aria-pressed="true" data-v="lorem">Lorem ipsum</button>
+          <button aria-pressed="false" data-v="english">English</button>
+          <button aria-pressed="false" data-v="arabic">عربي</button>
+        </div>
+      </div>
+      <div class="stack">
+        <span class="faint">Generate</span>
+        <div class="seg" id="unit" role="group" aria-label="Unit">
+          <button aria-pressed="true" data-v="paragraphs">Paragraphs</button>
+          <button aria-pressed="false" data-v="sentences">Sentences</button>
+          <button aria-pressed="false" data-v="words">Words</button>
+        </div>
+      </div>
+      <label class="field">How many
+        <div class="row">
+          <input type="range" id="countRange" min="1" max="20" value="3" class="grow" aria-label="Count slider">
+          <input type="number" class="input lg-num" id="count" min="1" value="3" inputmode="numeric">
+        </div>
+      </label>
+      <label class="check"><input type="checkbox" id="opener" checked> <span id="openerLabel">Start with “Lorem ipsum dolor sit amet…”</span></label>
+      <label class="check"><input type="checkbox" id="html"> Wrap paragraphs in &lt;p&gt; tags</label>
+      <div class="row">
+        <button class="btn primary" id="gen"><svg class="i"><use href="#i-refresh"/></svg>Generate</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="row between">
+        <h2>Output</h2>
+        <div class="row">
+          <button class="btn small" id="copy"><svg class="i"><use href="#i-copy"/></svg>Copy</button>
+          <button class="btn small" id="save"><svg class="i"><use href="#i-download"/></svg><span id="ext">.txt</span></button>
+        </div>
+      </div>
+      <div class="out lg-out mt" id="out" tabindex="0" dir="auto" aria-live="polite"></div>
+      <div class="stats mt" id="stats"></div>
+    </section>
+  </div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
